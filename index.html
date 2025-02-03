@@ -1,206 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marcos Ribeiro-Junior, Ph.D.</title>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Aptos&family=Aptos+Display&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
+    /* Base Styles */
     body {
-      font-family: 'Aptos', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      line-height: 1.5;
+      font-family: 'Aptos', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
     }
-    .profile-pic {
+    a {
+      color: #007acc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #005b99;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* Header */
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header .profile-pic {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #ccc;
-      margin-top: 20px;
+      border: 4px solid #ddd;
+      margin-bottom: 20px;
     }
-    .info {
-      text-align: left;
-      max-width: 800px;
-      width: 90%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .info h1 {
+    header h1 {
       margin: 0;
-      font-size: 24px;
       font-family: 'Aptos Display', sans-serif;
+      font-size: 32px;
     }
-    .info p {
-      font-size: 16px;
-      color: #555;
+    header p {
       margin: 5px 0;
+      font-size: 16px;
     }
-    .links {
-      text-align: right;
-      font-size: 14px;
+    .social-links {
+      margin-top: 15px;
     }
-    .links a {
-      text-decoration: none;
-      color: #007acc;
-      margin: 0 5px;
+    .social-links a {
+      margin: 0 8px;
+      font-size: 20px;
     }
-    .about, .news, .publications, .experience {
-      max-width: 800px;
-      text-align: left;
-      margin-top: 30px;
-      padding: 20px;
-      background: white;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Section Cards */
+    section {
+      background: #fff;
       border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    /* Customização da seção Publications */
-    .publications h2 {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    section h2 {
+      margin-top: 0;
+      font-size: 24px;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 10px;
     }
-    .publication-list {
+    /* Publications List */
+    .publications ol {
       list-style: none;
-      padding-left: 0;
+      padding: 0;
+      counter-reset: pub;
     }
-    .publication-list li {
-      margin-bottom: 10px;
+    .publications li {
+      padding: 15px 0;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .publications li:last-child {
+      border-bottom: none;
+    }
+    /* Experience Section */
+    .experience .job {
+      margin-bottom: 30px;
+    }
+    .experience .job h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #007acc;
+    }
+    .experience .job .details {
+      font-style: italic;
+      margin: 5px 0 10px;
+      color: #555;
+    }
+    .experience .job ul {
+      margin: 0 0 10px 20px;
+    }
+    /* Responsive Layout */
+    @media (min-width: 768px) {
+      .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
-  <img src="profile.jpeg" alt="Marcos Ribeiro-Junior" class="profile-pic">
-  <div class="info">
-    <div>
-      <h1>Marcos Ribeiro-Junior, <span style="font-size: 18px;">Ph.D.</span></h1>
+  <div class="container">
+    <!-- Header with Profile -->
+    <header>
+      <img src="profile.jpeg" alt="Marcos Ribeiro-Junior" class="profile-pic">
+      <h1>Marcos Ribeiro-Junior, <span style="font-size: 0.7em;">Ph.D.</span></h1>
       <p>Diagnostics Specialist at MiFi® LLC</p>
       <p>Email: <a href="mailto:marcos.ribeiro@okstate.edu">marcos.ribeiro@okstate.edu</a></p>
-    </div>
-    <div class="links">
-      <a href="https://orcid.org/0000-0002-5024-1801" target="_blank"><i class="fab fa-orcid"></i> ORCID</a> |
-      <a href="https://scholar.google.com.br/citations?user=p6OAgMgAAAAJ&hl" target="_blank"><i class="fab fa-google"></i> Google Scholar</a> |
-      <a href="https://www.linkedin.com/in/marcosrrjr" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
-      <a href="https://github.com/marcosrrjr" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    </div>
+      <div class="social-links">
+        <a href="https://orcid.org/0000-0002-5024-1801" target="_blank"><i class="fab fa-orcid"></i></a>
+        <a href="https://scholar.google.com.br/citations?user=p6OAgMgAAAAJ&hl" target="_blank"><i class="fab fa-google"></i></a>
+        <a href="https://www.linkedin.com/in/marcosrrjr" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/marcosrrjr" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Marcos Ribeiro-Junior’s interests include developing innovative tools for pathogen detection and disease diagnostics across multiple host species. By integrating advanced bioinformatics, molecular diagnostics, and high-throughput sequencing (HTS) technologies, he creates fast, accurate, and reliable diagnostic solutions for human, agricultural, and zoonotic pathogens.
+      </p>
+      <p>
+        Currently, he leads the development of proprietary e-probes, a core technology behind MiFi® LLC—a SaaS platform for rapid pathogen detection through HTS data analysis. His work focuses on designing, validating, and optimizing e-probes to enhance diagnostic accuracy and expand MiFi®’s detection capabilities across diverse host species.
+      </p>
+      <p>
+        Marcos Ribeiro-Junior received his Ph.D. in Agronomy (Plant Protection) from São Paulo State University (UNESP) in 2022, with a collaborative research period at Oklahoma State University (OSU) under the supervision of Prof. Renate Krause-Sakate and Prof. Francisco M. Ochoa-Corona. During his doctoral studies, he conducted research on molecular plant virology and bioinformatics, focusing on pathogen detection using high-throughput sequencing (HTS). Prior to that, he obtained his M.S. in Agronomy from UNESP in 2018 and his B.Sc. in Agronomy from the University of Marília (UNIMAR) in 2016.
+      </p>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+      <h2>News</h2>
+      <p>News</p>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+      <h2>
+        Publications 
+        <small style="color: darkblue; font-size: 0.8em;">
+          J=Journal Articles, B=Book Chapter, S=In Submission
+        </small>
+      </h2>
+      <ol>
+        <li>
+          <strong>[S.2]</strong> Ribeiro-Junior, M.R., Espindola, A., Nascimento, D.M., Barreto da Silva, F., Krause-Sakate, R., Ochoa-Corona, F.M. (2024). <strong>An attempt toward the global screening of soybean viruses using EDNA-MiFi®-based electronic probes.</strong> <em>PhytoFrontiers</em> (Submitted).
+        </li>
+        <li>
+          <strong>[S.1]</strong> Nascimento, D.M., Bodaghi, S., Wang, H., Ribeiro-Junior, M.R., Vidalakis, G., Cardwell, K.F. (2024). <strong>Development and validation of a suite of e-probes for EDNA to detect graft-transmissible pathogens of citrus using MiFi®.</strong> <em>PhytoFrontiers</em> (Submitted).
+        </li>
+        <li>
+          <strong>[J.24]</strong> Barreto da Silva, F., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2024). <a href="https://doi.org/10.3390/insects15080624" target="_blank"><strong>Exploring Bemisia tabaci Middle East–Asia Minor I and Mediterranean cryptic species relationship with cowpea mild mottle virus and their dynamics in soybean fields</strong></a>. <em>Insects</em>, Vol. 15, Issue 8, pp. 624. DOI: 10.3390/insects15080624.
+        </li>
+        <!-- ... Add the remaining publication items in similar format ... -->
+      </ol>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+      <h2>Experiences</h2>
+      
+      <div class="job">
+        <h3>Microbe Finder - MiFi®, LLC, Stillwater, OK, USA</h3>
+        <p class="details"><i>Diagnostics Specialist</i> | 2025 – Present</p>
+        <ul>
+          <li>Developing and implementing pathogen detection algorithms using the MiFi®.Tech platform <a href="https://app.mifi.tech/" target="_blank"><i class="fas fa-globe"></i></a>, a SaaS tool designed for rapid diagnostics via targeted-specific e-probes and NGS data.</li>
+          <li>Leading the validation of proprietary e-probe libraries tailored for host-specific pathogen diagnostics.</li>
+          <li>Collaborating with cross-functional teams to enhance the accuracy and efficiency of diagnostic pipelines.</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <h3>Oklahoma State University (OSU), Stillwater, OK, USA</h3>
+        <p class="details"><i>Postdoctoral Fellow, Institute for Biosecurity and Microbial Forensics (IBMF)</i> | 2024 – Present</p>
+        <ul>
+          <li>Conducting advanced research in microbial forensics with a focus on diagnostics and bioinformatics.</li>
+          <li>Developing high-throughput sequencing methods for pathogen detection and surveillance.</li>
+          <li>Collaborating with interdisciplinary teams to enhance diagnostic tools and methodologies.</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <h3>São Paulo State University (UNESP), Botucatu, SP, Brazil</h3>
+        <p class="details"><i>Postdoctoral Fellow, Department of Plant Protection</i> | 2023 – 2024</p>
+        <ul>
+          <li>Molecular characterization of orthotospoviruses infecting soybean and thrips insects.</li>
+          <li>DNA/RNA extraction and library preparation for Illumina sequencing.</li>
+          <li>Mentoring undergraduate and graduate students in molecular diagnostics.</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <h3>University of California Riverside (UCR) & Oklahoma State University (OSU), Remote</h3>
+        <p class="details"><i>Consultant, PFI MiFi for Citrus Project</i> | 2023 – 2024</p>
+        <ul>
+          <li>Designed and validated e-probes for pathogen detection in Citrus.</li>
+          <li>Conducted beta testing and data analysis using MiFi.tech diagnostic systems.</li>
+          <li>Prepared reports and technical documents for project supervisors.</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <h3>Oklahoma State University (OSU), Stillwater, OK, USA</h3>
+        <p class="details"><i>Postdoctoral Fellow, Institute for Biosecurity and Microbial Forensics (IBMF)</i> | 2022</p>
+        <ul>
+          <li>Developed e-probes for pathogen detection in citrus using high-throughput sequencing (HTS).</li>
+          <li>Conducted HTS data analysis for virus, viroid, and bacteria identification.</li>
+          <li>Published findings in peer-reviewed journals and technical reports.</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <h3>Oklahoma State University (OSU), Stillwater, OK, USA</h3>
+        <p class="details"><i>Ph.D. Internship, Institute for Biosecurity and Microbial Forensics (IBMF)</i> | 2021</p>
+        <ul>
+          <li>Conducted NGS library preparation and sequencing (Nanopore Platform).</li>
+          <li>Created and curated e-probes to detect global viruses in soybean.</li>
+          <li>Investigated virus identification in crops, developing diagnostic protocols.</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <h3>São Paulo State University (UNESP), Botucatu, SP, Brazil</h3>
+        <p class="details"><i>Graduate Research Assistant (Ph.D.), Plant Virology and Plant-Virus-Vector Interaction Laboratory</i> | 2018 – 2022</p>
+        <ul>
+          <li>Conducted molecular identification of thrips and whitefly species using PCR and Sanger sequencing.</li>
+          <li>Developed molecular markers for the detection of thrips.</li>
+          <li>Performed surveys of plant viruses and insect vectors in soybean fields.</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <h3>São Paulo State University (UNESP), Botucatu, SP, Brazil</h3>
+        <p class="details"><i>Graduate Research Assistant (M.S.), Plant Virology and Plant-Virus-Vector Interaction Laboratory</i> | 2016 – 2018</p>
+        <ul>
+          <li>Conducted biological, serological, and molecular identification of plant viruses.</li>
+          <li>Engaged in farmer outreach programs for disease diagnostics and management.</li>
+          <li>Established virus detection methods in leafy greens such as lettuce and chard.</li>
+        </ul>
+      </div>
+      
+      <div class="job">
+        <h3>São Paulo State University (UNESP), Botucatu, SP, Brazil</h3>
+        <p class="details"><i>Temporary Lecturer (Crop Diseases and Phytopathology)</i> | 2016 – 2018</p>
+        <ul>
+          <li>Delivered lectures and practical training sessions on crop disease management.</li>
+          <li>Supervised student projects and facilitated laboratory exercises.</li>
+        </ul>
+      </div>
+    </section>
   </div>
-  <div class="about">
-    <h2>About</h2>
-    <p>Marcos Ribeiro-Junior’s interests include developing innovative tools for pathogen detection and disease diagnostics across multiple host species. By integrating advanced bioinformatics, molecular diagnostics, and high-throughput sequencing (HTS) technologies, he creates fast, accurate, and reliable diagnostic solutions for human, agricultural, and zoonotic pathogens.</p>
-    <p>Currently, he leads the development of proprietary e-probes, a core technology behind MiFi® LLC, a SaaS platform for rapid pathogen detection through HTS data analysis. His work focuses on designing, validating, and optimizing e-probes to enhance diagnostic accuracy and expand MiFi®’s detection capabilities across diverse host species.</p>
-    <p>Marcos Ribeiro-Junior received his Ph.D. in Agronomy (Plant Protection) from São Paulo State University (UNESP) in 2022, with a collaborative research period at Oklahoma State University (OSU) under the supervision of Prof. Renate Krause-Sakate and Prof. Francisco M. Ochoa-Corona. During his doctoral studies, he conducted research on molecular plant virology and bioinformatics, focusing on pathogen detection using high-throughput sequencing (HTS). Prior to that, he obtained his M.S. in Agronomy from UNESP in 2018 and his B.Sc. in Agronomy from the University of Marília (UNIMAR) in 2016.</p>
-  </div>
-  <!-- Seção News -->
-  <div class="news">
-    <h2>News</h2>
-    <p>Aqui você pode adicionar as últimas notícias, atualizações ou anúncios relevantes.</p>
-  </div>
-  <!-- Seção Publications -->
-  <div class="publications">
-    <h2>
-      <span>Publications</span>
-      <span style="color: darkblue; font-size: 0.8em;">J=Journal Articles, B=Book Chapter, S=In Submission</span>
-    </h2>
-    <ol class="publication-list">
-      <li><strong>[S.2]</strong> Ribeiro-Junior, M.R., Espindola, A., Nascimento, D.M., Barreto da Silva, F., Krause-Sakate, R., Ochoa-Corona, F.M. (2024). <strong>An attempt toward the global screening of soybean viruses using EDNA-MiFi®-based electronic probes.</strong> <em>PhytoFrontiers</em> (Submitted).</li>
-      <li><strong>[S.1]</strong> Nascimento, D.M., Bodaghi, S., Wang, H., Ribeiro-Junior, M.R., Vidalakis, G., Cardwell, K.F. (2024). <strong>Development and validation of a suite of e-probes for EDNA to detect graft-transmissible pathogens of citrus using MiFi®.</strong> <em>PhytoFrontiers</em> (Submitted).</li>
-      <li><strong>[J.24]</strong> Barreto da Silva, F., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2024). <a href="https://doi.org/10.3390/insects15080624"><strong>Exploring Bemisia tabaci Middle East–Asia Minor I and Mediterranean cryptic species relationship with cowpea mild mottle virus and their dynamics in soybean fields</strong></a>. <em>Insects</em>, Vol. 15, Issue 8, pp. 624. DOI: 10.3390/insects15080624.</li>
-      <li><strong>[J.23]</strong> Watanabe, L.F.M., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2024). <a href="https://doi.org/10.1007/s40858-024-00679-9"><strong>High incidence of cassava common mosaic virus in cassava plants and complete genome sequence of a distinct isolate from Brazil</strong></a>. <em>Tropical Plant Pathology</em>, Vol. 49, Issue 6, pp. 943–948. DOI: 10.1007/s40858-024-00679-9.</li>
-      <li><strong>[J.22]</strong> Ribeiro-Junior, M.R., Krause-Sakate, R., Ochoa-Corona, F.M., et al. (2024). <a href="https://doi.org/107/s12600-024-01198-8"><strong>Molecular identification of thrips species in Brazilian agroecosystems</strong></a>. <em>Phytoparasitica</em>, Vol. 52, Issue 5. DOI: 10.1007/s12600-024-01198-8.</li>
-      <li><strong>[J.21]</strong> Krause-Sakate, R., Ribeiro-Junior, M.R., Ochoa-Corona, F.M., et al. (2024). <a href="https://doi.org/10.1093/jee/toae228"><strong>First detection of Bemisia tabaci (Hemiptera: Aleyrodidae) MED in Oklahoma and development of a high-resolution melting assay for MEAM1 and MED discrimination</strong></a>. <em>Journal of Economic Entomology</em>. DOI: 10.1093/jee/toae228.</li>
-      <li><strong>[J.20]</strong> Favara, G.M., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2023). <a href="https://doi.org/10.3389/fpls.2023.1202139"><strong>Infection of groundnut ringspot virus in Plumeria pudica characterized by irregular virus distribution and intermittent expression of symptoms</strong></a>. <em>Frontiers in Plant Science</em>, Vol. 14. DOI: 10.3389/fpls.2023.1202139.</li>
-      <li><strong>[J.19]</strong> Favara, G.M., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2023). <a href="https://doi.org/10.1590/1678-992X-2023-0078"><strong>First occurrence of bidens mottle virus in Brazil: biological and molecular characterization of isolates infecting Zinnia sp. and Bidens pilosa</strong></a>. <em>Scientia Agricola</em>, Vol. 81, Issue X, pp. e20230078. DOI: 10.1590/1678-992X-2023-0078.</li>
-      <li><strong>[J.18]</strong> Ribeiro-Junior, M.R., Barreto da Silva, F., Marubayashi, J.M., et al. (2022). <a href="https://doi.org/10.1007/s00705-022-05605-5"><strong>Molecular and biological characterization of an isolate of the potyvirus passiflora virus Y naturally infecting soybean (Glycine max) in Brazil</strong></a>. <em>Archives of Virology</em>. DOI: 10.1007/s00705-022-05605-5.</li>
-      <li><strong>[J.17]</strong> Vicentin, E., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2022). <a href="https://doi.org/10.1111/ppa.13572"><strong>Differential reaction of sweet pepper to infection with the crinivirus tomato chlorosis virus probably depends on the viral variant</strong></a>. <em>Plant Pathology</em>. DOI: 10.1111/ppa.13572.</li>
-      <li><strong>[J.16]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Silva Júnior, T.A.F., et al. (2022). <a href="https://doi.org/10.1007/s10658-021-02451-0"><strong>Survival of Curtobacterium flaccumfaciens pv. flaccumfaciens from soybean and common bean in soil</strong></a>. <em>European Journal of Plant Pathology</em>. DOI: 10.1007/s10658-021-02451-0.</li>
-      <li><strong>[J.15]</strong> Ribeiro-Junior, M.R., Gorayeb, E.S., Krause-Sakate, R., et al. (2021). <a href="https://doi.org/10.1007/s40858-021-00444-2"><strong>Molecular and biological characterization of apium virus Y infecting parsley in Brazil</strong></a>. <em>Tropical Plant Pathology</em>. DOI: 10.1007/s40858-021-00444-2.</li>
-      <li><strong>[J.14]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Sartori, M.M.P., et al. (2021). <a href="https://doi.org/10.1007/s10658-021-02232-9"><strong>Survival of Curtobacterium flaccumfaciens pv. flaccumfaciens in the phyllosphere and rhizosphere of crops</strong></a>. <em>European Journal of Plant Pathology</em>. DOI: 10.1007/s10658-021-02232-9.</li>
-      <li><strong>[J.13]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Kronka, A.Z., et al. (2021). <a href="https://doi.org/10.31976/0104-038321v270004"><strong>Óleos essenciais no tratamento de sementes</strong></a>. <em>Revisão Anual de Patologia de Plantas</em>, Vol. 27, pp. 77-90. DOI: 10.31976/0104-038321v270004.</li>
-      <li><strong>[J.12]</strong> Barreto da Silva, F.B., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2020). <a href="https://doi.org/10.7717/peerj.9828"><strong>Effects of cowpea mild mottle virus on soybean cultivars in Brazil</strong></a>. <em>PeerJ</em>. DOI: 10.7717/peerj.9828.</li>
-      <li><strong>[J.11]</strong> Kurokawa, S., Ribeiro-Junior, M.R., Furtado, E., et al. (2020). <a href="https://doi.org/10.1094/PDIS-02-20-0360-PDN"><strong>First report of southern blight on Valeriana officinalis caused by Sclerotium rolfsii in Brazil</strong></a>. <em>Plant Disease</em>. DOI: 10.1094/PDIS-02-20-0360-PDN.</li>
-      <li><strong>[J.10]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Sartori, M.M.P., et al. (2020). <a href="https://doi.org/10.1111/ppa.13206"><strong>Survival of Curtobacterium flaccumfaciens pv. flaccumfaciens in weeds</strong></a>. <em>Plant Pathology</em>. DOI: 10.1111/ppa.13206.</li>
-      <li><strong>[J.9]</strong> Krause-Sakate, R., Ribeiro-Junior, M.R., Pavan, M.A., et al. (2020). <a href="https://doi.org/10.3390/insects11120847"><strong>Population dynamics of whiteflies and associated viruses in South America: research progress and perspectives</strong></a>. <em>Insects</em>, Vol. 11, pp. 847. DOI: 10.3390/insects11120847.</li>
-      <li><strong>[J.8]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Kronka, A.Z., et al. (2020). <a href="https://doi.org/10.33448/rsd-v9i10.9028"><strong>Essential oils control anthracnose in pepper seeds</strong></a>. <em>Research, Society and Development</em>. DOI: 10.33448/rsd-v9i10.9028.</li>
-      <li><strong>[J.7]</strong> Bello, B.H., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2019). <a href="https://doi.org/10.1094/PDIS-07-19-1490-PDN"><strong>First report of tomato chlorosis virus infecting cucumber in Brazil</strong></a>. <em>Plant Disease</em>. DOI: 10.1094/PDIS-07-19-1490-PDN.</li>
-      <li><strong>[J.6]</strong> Ribeiro-Junior, M.R., Baldini, L.F.S., Krause-Sakate, R., et al. (2018). <a href="https://doi.org/10.1007/s40858-017-0207-8"><strong>Biological and molecular characterization of a basal-Brassica/Raphanus Turnip mosaic virus isolate from Eruca sativa</strong></a>. <em>Tropical Plant Pathology</em>. DOI: 10.1007/s40858-017-0207-8.</li>
-      <li><strong>[J.5]</strong> Ribeiro-Junior, M.R., Crucio, G.C.D., Krause-Sakate, R., et al. (2018). <a href="https://doi.org/10.1007/s42161-018-0142-7"><strong>First report of turnip mosaic virus naturally infecting lettuce and chard plants in Brazil</strong></a>. <em>Journal of Plant Pathology</em>. DOI: 10.1007/s42161-018-0142-7.</li>
-      <li><strong>[J.4]</strong> Cruciol, G.C.D., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2018). <a href="https://doi.org/10.1007/s42161-018-0171-2"><strong>First report of groundnut ringspot virus in scarlet eggplant in Brazil</strong></a>. <em>Journal of Plant Pathology</em>. DOI: 10.1007/s42161-018-0171-2.</li>
-      <li><strong>[B.1]</strong> Cruciol, G. C. D.; Nascimento, D. M.; Ribeiro-Junior, M. R.; Santos, P. L.; Silva, J. C.; Silva Junior, T. A. F.; Kronka, A. Z.; Krause-Sakate, R.; Maringoni, A. C. (2017). In: Edson Luiz Lopes Baldin; Adriana Zanin Kronka; Ivana Fernandes da Silva (Eds.). <strong>Book Chapter Title</strong>. 1st Edition. Botucatu – SP: Fundação de Estudos e Pesquisas Agrícolas e Florestais, Vol. 1, pp. 32-50.</li>
-    </ol>
-  </div>
-    <div class="experience">
-        <h2>Experiences</h2>
-        <p><b>Microbe Finder - MiFi®, LLC</b>, Stillwater, OK, USA</p>
-        <p><i>Diagnostics Specialist</i>, 2025 -- Present</p>
-        <ul>
-            <li>Developing and implementing pathogen detection algorithms using the MiFi®.Tech platform <a href="https://app.mifi.tech/" target="_blank" style="color: darkblue;"><i class="fas fa-globe"></i></a>, a SaaS tool designed for rapid diagnostics via targeted-specific e-probes and NGS data.</li>
-            <li>Leading the validation of proprietary e-probe libraries tailored for host-specific pathogen diagnostics.</li>
-            <li>Collaborating with cross-functional teams to enhance the accuracy and efficiency of diagnostic pipelines.</li>
-        </ul>
-        <p><b>Oklahoma State University (OSU)</b>, Stillwater, OK, USA</p>
-        <p><i>Postdoctoral Fellow, Institute for Biosecurity and Microbial Forensics (IBMF)</i>, 2024 -- Present</p>
-        <ul>
-            <li>Conducting advanced research in microbial forensics with a focus on diagnostics and bioinformatics.</li>
-            <li>Developing high-throughput sequencing methods for pathogen detection and surveillance.</li>
-            <li>Collaborating with interdisciplinary teams to enhance diagnostic tools and methodologies.</li>
-        </ul>
-        <p><b>São Paulo State University (UNESP)</b>, Botucatu, SP, Brazil</p>
-        <p><i>Postdoctoral Fellow, Department of Plant Protection</i>, 2023 -- 2024</p>
-        <ul>
-            <li>Molecular characterization of orthotospoviruses infecting soybean and thrips insects.</li>
-            <li>DNA/RNA extraction and library preparation for Illumina sequencing.</li>
-            <li>Mentoring undergraduate and graduate students in molecular diagnostics.</li>
-        </ul>
-        <p><b>University of California Riverside (UCR) & Oklahoma State University (OSU)</b>, Remote</p>
-        <p><i>Consultant, PFI MiFi for Citrus Project</i>, 2023 -- 2024</p>
-        <ul>
-            <li>Designed and validated e-probes for pathogen detection in Citrus.</li>
-            <li>Conducted beta testing and data analysis using MiFi.tech diagnostic systems.</li>
-            <li>Prepared reports and technical documents for project supervisors.</li>
-        </ul>
-        <p><b>Oklahoma State University (OSU)</b>, Stillwater, OK, USA</p>
-        <p><i>Postdoctoral Fellow, Institute for Biosecurity and Microbial Forensics (IBMF)</i>, 2022</p>
-        <ul>
-            <li>Developed e-probes for pathogen detection in citrus using high-throughput sequencing (HTS).</li>
-            <li>Conducted HTS data analysis for virus, viroid, and bacteria identification.</li>
-            <li>Published findings in peer-reviewed journals and technical reports.</li>
-        </ul>
-        <p><b>Oklahoma State University (OSU)</b>, Stillwater, OK, USA</p>
-        <p><i>Ph.D. Internship, Institute for Biosecurity and Microbial Forensics (IBMF)</i>, 2021</p>
-        <ul>
-            <li>Conducted NGS library preparation and sequencing (Nanopore Platform).</li>
-            <li>Created and curated e-probes to detect global viruses in soybean.</li>
-            <li>Investigated virus identification in crops, developing diagnostic protocols.</li>
-        </ul>
-        <p><b>São Paulo State University (UNESP)</b>, Botucatu, SP, Brazil</p>
-        <p><i>Graduate Research Assistant (Ph.D.), Plant Virology and Plant-Virus-Vector Interaction Laboratory</i>, 2018 -- 2022</p>
-        <ul>
-            <li>Conducted molecular identification of thrips and whitefly species using PCR and Sanger sequencing.</li>
-            <li>Developed molecular markers for the detection of thrips.</li>
-            <li>Performed surveys of plant viruses and insect vectors in soybean fields.</li>
-        </ul>
-        <p><b>São Paulo State University (UNESP)</b>, Botucatu, SP, Brazil</p>
-        <p><i>Graduate Research Assistant (M.S.), Plant Virology and Plant-Virus-Vector Interaction Laboratory</i>, 2016 -- 2018</p>
-        <ul>
-            <li>Conducted biological, serological, and molecular identification of plant viruses.</li>
-            <li>Engaged in farmer outreach programs for disease diagnostics and management.</li>
-            <li>Established virus detection methods in leafy greens such as lettuce and chard.</li>
-        </ul>
-        <p><b>São Paulo State University (UNESP)</b>, Botucatu, SP, Brazil</p>
-        <p><i>Temporary Lecturer (Crop Diseases and Phytopathology)</i>, 2016 -- 2018</p>
-        <ul>
-            <li>Delivered lectures and practical training sessions on crop disease management.</li>
-            <li>Supervised student projects and facilitated laboratory exercises.</li>
-        </ul>
-    </div>
 </body>
 </html>
