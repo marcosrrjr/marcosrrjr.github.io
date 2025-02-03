@@ -44,21 +44,25 @@
       border: 4px solid #ddd;
       margin-bottom: 20px;
     }
-    header h1 {
+    .info {
+      text-align: center;
+    }
+    .info h1 {
       margin: 0;
       font-family: 'Aptos Display', sans-serif;
       font-size: 32px;
     }
-    header p {
+    .info p {
+      font-size: 16px;
       margin: 5px 0;
+    }
+    /* Original Links */
+    .links {
+      margin-top: 15px;
       font-size: 16px;
     }
-    .social-links {
-      margin-top: 15px;
-    }
-    .social-links a {
-      margin: 0 8px;
-      font-size: 20px;
+    .links a {
+      margin: 0 5px;
     }
     /* Section Cards */
     section {
@@ -78,7 +82,6 @@
     .publications ol {
       list-style: none;
       padding: 0;
-      counter-reset: pub;
     }
     .publications li {
       padding: 15px 0;
@@ -104,29 +107,23 @@
     .experience .job ul {
       margin: 0 0 10px 20px;
     }
-    /* Responsive Layout */
-    @media (min-width: 768px) {
-      .info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header with Profile -->
+    <!-- Header with Profile & Links -->
     <header>
       <img src="profile.jpeg" alt="Marcos Ribeiro-Junior" class="profile-pic">
-      <h1>Marcos Ribeiro-Junior, <span style="font-size: 0.7em;">Ph.D.</span></h1>
-      <p>Diagnostics Specialist at MiFi® LLC</p>
-      <p>Email: <a href="mailto:marcos.ribeiro@okstate.edu">marcos.ribeiro@okstate.edu</a></p>
-      <div class="social-links">
-        <a href="https://orcid.org/0000-0002-5024-1801" target="_blank"><i class="fab fa-orcid"></i></a>
-        <a href="https://scholar.google.com.br/citations?user=p6OAgMgAAAAJ&hl" target="_blank"><i class="fab fa-google"></i></a>
-        <a href="https://www.linkedin.com/in/marcosrrjr" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/marcosrrjr" target="_blank"><i class="fab fa-github"></i></a>
+      <div class="info">
+        <h1>Marcos Ribeiro-Junior, <span style="font-size: 18px;">Ph.D.</span></h1>
+        <p>Diagnostics Specialist at MiFi® LLC</p>
+        <p>Email: <a href="mailto:marcos.ribeiro@okstate.edu">marcos.ribeiro@okstate.edu</a></p>
+        <div class="links">
+          <a href="https://orcid.org/0000-0002-5024-1801" target="_blank"><i class="fab fa-orcid"></i> ORCID</a> |
+          <a href="https://scholar.google.com.br/citations?user=p6OAgMgAAAAJ&hl" target="_blank"><i class="fab fa-google"></i> Google Scholar</a> |
+          <a href="https://www.linkedin.com/in/marcosrrjr" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+          <a href="https://github.com/marcosrrjr" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
       </div>
     </header>
 
@@ -147,35 +144,46 @@
     <!-- News Section -->
     <section id="news">
       <h2>News</h2>
-      <p>News</p>
+      <p>Aqui você pode adicionar as últimas notícias, atualizações ou anúncios relevantes.</p>
     </section>
 
     <!-- Publications Section -->
     <section id="publications" class="publications">
       <h2>
         Publications 
-        <small style="color: darkblue; font-size: 0.8em;">
-          J=Journal Articles, B=Book Chapter, S=In Submission
-        </small>
+        <small style="color: darkblue; font-size: 0.8em;">J=Journal Articles, B=Book Chapter, S=In Submission</small>
       </h2>
       <ol>
-        <li>
-          <strong>[S.2]</strong> Ribeiro-Junior, M.R., Espindola, A., Nascimento, D.M., Barreto da Silva, F., Krause-Sakate, R., Ochoa-Corona, F.M. (2024). <strong>An attempt toward the global screening of soybean viruses using EDNA-MiFi®-based electronic probes.</strong> <em>PhytoFrontiers</em> (Submitted).
-        </li>
-        <li>
-          <strong>[S.1]</strong> Nascimento, D.M., Bodaghi, S., Wang, H., Ribeiro-Junior, M.R., Vidalakis, G., Cardwell, K.F. (2024). <strong>Development and validation of a suite of e-probes for EDNA to detect graft-transmissible pathogens of citrus using MiFi®.</strong> <em>PhytoFrontiers</em> (Submitted).
-        </li>
-        <li>
-          <strong>[J.24]</strong> Barreto da Silva, F., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2024). <a href="https://doi.org/10.3390/insects15080624" target="_blank"><strong>Exploring Bemisia tabaci Middle East–Asia Minor I and Mediterranean cryptic species relationship with cowpea mild mottle virus and their dynamics in soybean fields</strong></a>. <em>Insects</em>, Vol. 15, Issue 8, pp. 624. DOI: 10.3390/insects15080624.
-        </li>
-        <!-- ... Add the remaining publication items in similar format ... -->
+        <li><strong>[S.2]</strong> Ribeiro-Junior, M.R., Espindola, A., Nascimento, D.M., Barreto da Silva, F., Krause-Sakate, R., Ochoa-Corona, F.M. (2024). <strong>An attempt toward the global screening of soybean viruses using EDNA-MiFi®-based electronic probes.</strong> <em>PhytoFrontiers</em> (Submitted).</li>
+        <li><strong>[S.1]</strong> Nascimento, D.M., Bodaghi, S., Wang, H., Ribeiro-Junior, M.R., Vidalakis, G., Cardwell, K.F. (2024). <strong>Development and validation of a suite of e-probes for EDNA to detect graft-transmissible pathogens of citrus using MiFi®.</strong> <em>PhytoFrontiers</em> (Submitted).</li>
+        <li><strong>[J.24]</strong> Barreto da Silva, F., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2024). <a href="https://doi.org/10.3390/insects15080624" target="_blank"><strong>Exploring Bemisia tabaci Middle East–Asia Minor I and Mediterranean cryptic species relationship with cowpea mild mottle virus and their dynamics in soybean fields</strong></a>. <em>Insects</em>, Vol. 15, Issue 8, pp. 624. DOI: 10.3390/insects15080624.</li>
+        <li><strong>[J.23]</strong> Watanabe, L.F.M., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2024). <a href="https://doi.org/10.1007/s40858-024-00679-9" target="_blank"><strong>High incidence of cassava common mosaic virus in cassava plants and complete genome sequence of a distinct isolate from Brazil</strong></a>. <em>Tropical Plant Pathology</em>, Vol. 49, Issue 6, pp. 943–948. DOI: 10.1007/s40858-024-00679-9.</li>
+        <li><strong>[J.22]</strong> Ribeiro-Junior, M.R., Krause-Sakate, R., Ochoa-Corona, F.M., et al. (2024). <a href="https://doi.org/107/s12600-024-01198-8" target="_blank"><strong>Molecular identification of thrips species in Brazilian agroecosystems</strong></a>. <em>Phytoparasitica</em>, Vol. 52, Issue 5. DOI: 10.1007/s12600-024-01198-8.</li>
+        <li><strong>[J.21]</strong> Krause-Sakate, R., Ribeiro-Junior, M.R., Ochoa-Corona, F.M., et al. (2024). <a href="https://doi.org/10.1093/jee/toae228" target="_blank"><strong>First detection of Bemisia tabaci (Hemiptera: Aleyrodidae) MED in Oklahoma and development of a high-resolution melting assay for MEAM1 and MED discrimination</strong></a>. <em>Journal of Economic Entomology</em>. DOI: 10.1093/jee/toae228.</li>
+        <li><strong>[J.20]</strong> Favara, G.M., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2023). <a href="https://doi.org/10.3389/fpls.2023.1202139" target="_blank"><strong>Infection of groundnut ringspot virus in Plumeria pudica characterized by irregular virus distribution and intermittent expression of symptoms</strong></a>. <em>Frontiers in Plant Science</em>, Vol. 14. DOI: 10.3389/fpls.2023.1202139.</li>
+        <li><strong>[J.19]</strong> Favara, G.M., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2023). <a href="https://doi.org/10.1590/1678-992X-2023-0078" target="_blank"><strong>First occurrence of bidens mottle virus in Brazil: biological and molecular characterization of isolates infecting Zinnia sp. and Bidens pilosa</strong></a>. <em>Scientia Agricola</em>, Vol. 81, Issue X, pp. e20230078. DOI: 10.1590/1678-992X-2023-0078.</li>
+        <li><strong>[J.18]</strong> Ribeiro-Junior, M.R., Barreto da Silva, F., Marubayashi, J.M., et al. (2022). <a href="https://doi.org/10.1007/s00705-022-05605-5" target="_blank"><strong>Molecular and biological characterization of an isolate of the potyvirus passiflora virus Y naturally infecting soybean (Glycine max) in Brazil</strong></a>. <em>Archives of Virology</em>. DOI: 10.1007/s00705-022-05605-5.</li>
+        <li><strong>[J.17]</strong> Vicentin, E., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2022). <a href="https://doi.org/10.1111/ppa.13572" target="_blank"><strong>Differential reaction of sweet pepper to infection with the crinivirus tomato chlorosis virus probably depends on the viral variant</strong></a>. <em>Plant Pathology</em>. DOI: 10.1111/ppa.13572.</li>
+        <li><strong>[J.16]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Silva Júnior, T.A.F., et al. (2022). <a href="https://doi.org/10.1007/s10658-021-02451-0" target="_blank"><strong>Survival of Curtobacterium flaccumfaciens pv. flaccumfaciens from soybean and common bean in soil</strong></a>. <em>European Journal of Plant Pathology</em>. DOI: 10.1007/s10658-021-02451-0.</li>
+        <li><strong>[J.15]</strong> Ribeiro-Junior, M.R., Gorayeb, E.S., Krause-Sakate, R., et al. (2021). <a href="https://doi.org/10.1007/s40858-021-00444-2" target="_blank"><strong>Molecular and biological characterization of apium virus Y infecting parsley in Brazil</strong></a>. <em>Tropical Plant Pathology</em>. DOI: 10.1007/s40858-021-00444-2.</li>
+        <li><strong>[J.14]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Sartori, M.M.P., et al. (2021). <a href="https://doi.org/10.1007/s10658-021-02232-9" target="_blank"><strong>Survival of Curtobacterium flaccumfaciens pv. flaccumfaciens in the phyllosphere and rhizosphere of crops</strong></a>. <em>European Journal of Plant Pathology</em>. DOI: 10.1007/s10658-021-02232-9.</li>
+        <li><strong>[J.13]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Kronka, A.Z., et al. (2021). <a href="https://doi.org/10.31976/0104-038321v270004" target="_blank"><strong>Óleos essenciais no tratamento de sementes</strong></a>. <em>Revisão Anual de Patologia de Plantas</em>, Vol. 27, pp. 77-90. DOI: 10.31976/0104-038321v270004.</li>
+        <li><strong>[J.12]</strong> Barreto da Silva, F.B., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2020). <a href="https://doi.org/10.7717/peerj.9828" target="_blank"><strong>Effects of cowpea mild mottle virus on soybean cultivars in Brazil</strong></a>. <em>PeerJ</em>. DOI: 10.7717/peerj.9828.</li>
+        <li><strong>[J.11]</strong> Kurokawa, S., Ribeiro-Junior, M.R., Furtado, E., et al. (2020). <a href="https://doi.org/10.1094/PDIS-02-20-0360-PDN" target="_blank"><strong>First report of southern blight on Valeriana officinalis caused by Sclerotium rolfsii in Brazil</strong></a>. <em>Plant Disease</em>. DOI: 10.1094/PDIS-02-20-0360-PDN.</li>
+        <li><strong>[J.10]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Sartori, M.M.P., et al. (2020). <a href="https://doi.org/10.1111/ppa.13206" target="_blank"><strong>Survival of Curtobacterium flaccumfaciens pv. flaccumfaciens in weeds</strong></a>. <em>Plant Pathology</em>. DOI: 10.1111/ppa.13206.</li>
+        <li><strong>[J.9]</strong> Krause-Sakate, R., Ribeiro-Junior, M.R., Pavan, M.A., et al. (2020). <a href="https://doi.org/10.3390/insects11120847" target="_blank"><strong>Population dynamics of whiteflies and associated viruses in South America: research progress and perspectives</strong></a>. <em>Insects</em>, Vol. 11, pp. 847. DOI: 10.3390/insects11120847.</li>
+        <li><strong>[J.8]</strong> Nascimento, D.M., Ribeiro-Junior, M.R., Kronka, A.Z., et al. (2020). <a href="https://doi.org/10.33448/rsd-v9i10.9028" target="_blank"><strong>Essential oils control anthracnose in pepper seeds</strong></a>. <em>Research, Society and Development</em>. DOI: 10.33448/rsd-v9i10.9028.</li>
+        <li><strong>[J.7]</strong> Bello, B.H., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2019). <a href="https://doi.org/10.1094/PDIS-07-19-1490-PDN" target="_blank"><strong>First report of tomato chlorosis virus infecting cucumber in Brazil</strong></a>. <em>Plant Disease</em>. DOI: 10.1094/PDIS-07-19-1490-PDN.</li>
+        <li><strong>[J.6]</strong> Ribeiro-Junior, M.R., Baldini, L.F.S., Krause-Sakate, R., et al. (2018). <a href="https://doi.org/10.1007/s40858-017-0207-8" target="_blank"><strong>Biological and molecular characterization of a basal-Brassica/Raphanus Turnip mosaic virus isolate from Eruca sativa</strong></a>. <em>Tropical Plant Pathology</em>. DOI: 10.1007/s40858-017-0207-8.</li>
+        <li><strong>[J.5]</strong> Ribeiro-Junior, M.R., Crucio, G.C.D., Krause-Sakate, R., et al. (2018). <a href="https://doi.org/10.1007/s42161-018-0142-7" target="_blank"><strong>First report of turnip mosaic virus naturally infecting lettuce and chard plants in Brazil</strong></a>. <em>Journal of Plant Pathology</em>. DOI: 10.1007/s42161-018-0142-7.</li>
+        <li><strong>[J.4]</strong> Cruciol, G.C.D., Ribeiro-Junior, M.R., Krause-Sakate, R., et al. (2018). <a href="https://doi.org/10.1007/s42161-018-0171-2" target="_blank"><strong>First report of groundnut ringspot virus in scarlet eggplant in Brazil</strong></a>. <em>Journal of Plant Pathology</em>. DOI: 10.1007/s42161-018-0171-2.</li>
+        <li><strong>[B.1]</strong> Cruciol, G. C. D.; Nascimento, D. M.; Ribeiro-Junior, M. R.; Santos, P. L.; Silva, J. C.; Silva Junior, T. A. F.; Kronka, A. Z.; Krause-Sakate, R.; Maringoni, A. C. (2017). In: Edson Luiz Lopes Baldin; Adriana Zanin Kronka; Ivana Fernandes da Silva (Eds.). <strong>Book Chapter Title</strong>. 1st Edition. Botucatu – SP: Fundação de Estudos e Pesquisas Agrícolas e Florestais, Vol. 1, pp. 32-50.</li>
       </ol>
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
       <h2>Experiences</h2>
-      
       <div class="job">
         <h3>Microbe Finder - MiFi®, LLC, Stillwater, OK, USA</h3>
         <p class="details"><i>Diagnostics Specialist</i> | 2025 – Present</p>
@@ -185,7 +193,6 @@
           <li>Collaborating with cross-functional teams to enhance the accuracy and efficiency of diagnostic pipelines.</li>
         </ul>
       </div>
-      
       <div class="job">
         <h3>Oklahoma State University (OSU), Stillwater, OK, USA</h3>
         <p class="details"><i>Postdoctoral Fellow, Institute for Biosecurity and Microbial Forensics (IBMF)</i> | 2024 – Present</p>
@@ -195,7 +202,6 @@
           <li>Collaborating with interdisciplinary teams to enhance diagnostic tools and methodologies.</li>
         </ul>
       </div>
-      
       <div class="job">
         <h3>São Paulo State University (UNESP), Botucatu, SP, Brazil</h3>
         <p class="details"><i>Postdoctoral Fellow, Department of Plant Protection</i> | 2023 – 2024</p>
@@ -205,7 +211,6 @@
           <li>Mentoring undergraduate and graduate students in molecular diagnostics.</li>
         </ul>
       </div>
-      
       <div class="job">
         <h3>University of California Riverside (UCR) & Oklahoma State University (OSU), Remote</h3>
         <p class="details"><i>Consultant, PFI MiFi for Citrus Project</i> | 2023 – 2024</p>
@@ -215,7 +220,6 @@
           <li>Prepared reports and technical documents for project supervisors.</li>
         </ul>
       </div>
-      
       <div class="job">
         <h3>Oklahoma State University (OSU), Stillwater, OK, USA</h3>
         <p class="details"><i>Postdoctoral Fellow, Institute for Biosecurity and Microbial Forensics (IBMF)</i> | 2022</p>
@@ -225,7 +229,6 @@
           <li>Published findings in peer-reviewed journals and technical reports.</li>
         </ul>
       </div>
-      
       <div class="job">
         <h3>Oklahoma State University (OSU), Stillwater, OK, USA</h3>
         <p class="details"><i>Ph.D. Internship, Institute for Biosecurity and Microbial Forensics (IBMF)</i> | 2021</p>
@@ -235,7 +238,6 @@
           <li>Investigated virus identification in crops, developing diagnostic protocols.</li>
         </ul>
       </div>
-      
       <div class="job">
         <h3>São Paulo State University (UNESP), Botucatu, SP, Brazil</h3>
         <p class="details"><i>Graduate Research Assistant (Ph.D.), Plant Virology and Plant-Virus-Vector Interaction Laboratory</i> | 2018 – 2022</p>
@@ -245,7 +247,6 @@
           <li>Performed surveys of plant viruses and insect vectors in soybean fields.</li>
         </ul>
       </div>
-      
       <div class="job">
         <h3>São Paulo State University (UNESP), Botucatu, SP, Brazil</h3>
         <p class="details"><i>Graduate Research Assistant (M.S.), Plant Virology and Plant-Virus-Vector Interaction Laboratory</i> | 2016 – 2018</p>
@@ -255,7 +256,6 @@
           <li>Established virus detection methods in leafy greens such as lettuce and chard.</li>
         </ul>
       </div>
-      
       <div class="job">
         <h3>São Paulo State University (UNESP), Botucatu, SP, Brazil</h3>
         <p class="details"><i>Temporary Lecturer (Crop Diseases and Phytopathology)</i> | 2016 – 2018</p>
