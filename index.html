@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marcos Ribeiro-Junior, Ph.D.</title>
+  <meta name="description" content="Marcos Ribeiro-Junior - Diagnostics Specialist at MiFi® LLC, Ph.D. in Agronomy. Research and work on pathogen detection and diagnostics." />
+  <meta name="keywords" content="Marcos Ribeiro-Junior, Ph.D., Diagnostics Specialist, MiFi LLC, bioinformatics, molecular diagnostics, HTS, pathogen detection" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Aptos&family=Aptos+Display&display=swap" rel="stylesheet">
   <!-- FontAwesome -->
@@ -23,25 +25,41 @@
       text-decoration: none;
       transition: color 0.3s ease;
     }
-    a:hover {
+    a:hover, a:focus {
       color: #005b99;
+      outline: none;
     }
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
-    /* Updated Header Styles */
+    /* Skip Navigation Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #007acc;
+      color: #fff;
+      padding: 8px 16px;
+      z-index: 100;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    /* Header Styles */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 40px 20px;
+      flex-wrap: wrap;
     }
     .header-left,
     .header-center,
     .header-right {
       flex: 1;
+      min-width: 280px;
     }
     .header-left {
       text-align: left;
@@ -66,13 +84,16 @@
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #ddd;
+      /* Border removed */
     }
     /* Links styling */
     .links a {
       margin: 0 5px;
     }
-    /* Section Cards */
+    /* Main and Section Styles */
+    main {
+      margin-top: 20px;
+    }
     section {
       background: #fff;
       border-radius: 8px;
@@ -115,58 +136,104 @@
     .experience .job ul {
       margin: 0 0 10px 20px;
     }
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-left, .header-center, .header-right {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+    /* Utility Classes */
+    .phd {
+      font-size: 18px;
+    }
+    .publication-note {
+      color: darkblue;
+      font-size: 0.8em;
+    }
   </style>
+  <!-- Structured Data using JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marcos Ribeiro-Junior",
+    "jobTitle": "Diagnostics Specialist",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "MiFi® LLC"
+    },
+    "email": "mailto:marcos.ribeiro@okstate.edu",
+    "url": "https://yourwebsite.com",
+    "image": "profile.jpeg"
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="container">
     <!-- Header with three columns -->
-    <header>
+    <header role="banner">
       <!-- Left: Personal Info -->
       <div class="header-left">
-        <h1>Marcos Ribeiro-Junior, <span style="font-size: 18px;">Ph.D.</span></h1>
+        <h1>Marcos Ribeiro-Junior, <span class="phd">Ph.D.</span></h1>
         <p>Diagnostics Specialist at MiFi® LLC</p>
-        <p>Email: <a href="mailto:marcos.ribeiro@okstate.edu">marcos.ribeiro@okstate.edu</a></p>
+        <p><a href="mailto:marcos.ribeiro@okstate.edu">marcos.ribeiro@okstate.edu</a></p>
         <p>1414 S. Sangre Rd., STE 117,<br>Stillwater, OK 74074, USA</p>
       </div>
       <!-- Center: Profile Picture -->
       <div class="header-center">
-        <img src="profile.jpeg" alt="Marcos Ribeiro-Junior" class="profile-pic">
+        <img src="profile.jpeg" alt="Marcos Ribeiro-Junior" class="profile-pic" loading="lazy">
       </div>
       <!-- Right: Links -->
       <div class="header-right">
-        <div class="links">
+        <nav role="navigation" class="links">
           <a href="https://orcid.org/0000-0002-5024-1801" target="_blank"><i class="fab fa-orcid"></i> ORCID</a> |
           <a href="https://scholar.google.com.br/citations?user=p6OAgMgAAAAJ&hl" target="_blank"><i class="fab fa-google"></i> Google Scholar</a> |
           <a href="https://www.linkedin.com/in/marcosrrjr" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
           <a href="https://github.com/marcosrrjr" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        </div>
+        </nav>
       </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Marcos Ribeiro-Junior’s interests include developing innovative tools for pathogen detection and disease diagnostics across multiple host species. By integrating advanced bioinformatics, molecular diagnostics, and high-throughput sequencing (HTS) technologies, he creates fast, accurate, and reliable diagnostic solutions for human, agricultural, and zoonotic pathogens.
-      </p>
-      <p>
-        Currently, he leads the development of proprietary e-probes, a core technology behind MiFi® LLC—a SaaS platform for rapid pathogen detection through HTS data analysis. His work focuses on designing, validating, and optimizing e-probes to enhance diagnostic accuracy and expand MiFi®’s detection capabilities across diverse host species.
-      </p>
-      <p>
-        Marcos Ribeiro-Junior received his Ph.D. in Agronomy (Plant Protection) from São Paulo State University (UNESP) in 2022, with a collaborative research period at Oklahoma State University (OSU) under the supervision of Prof. Renate Krause-Sakate and Prof. Francisco M. Ochoa-Corona. During his doctoral studies, he conducted research on molecular plant virology and bioinformatics, focusing on pathogen detection using high-throughput sequencing (HTS). Prior to that, he obtained his M.S. in Agronomy from UNESP in 2018 and his B.Sc. in Agronomy from the University of Marília (UNIMAR) in 2016.
-      </p>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- About Section -->
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          Marcos Ribeiro-Junior’s interests include developing innovative tools for pathogen detection and disease diagnostics across multiple host species. By integrating advanced bioinformatics, molecular diagnostics, and high-throughput sequencing (HTS) technologies, he creates fast, accurate, and reliable diagnostic solutions for human, agricultural, and zoonotic pathogens.
+        </p>
+        <p>
+          Currently, he leads the development of proprietary e-probes, a core technology behind MiFi® LLC—a SaaS platform for rapid pathogen detection through HTS data analysis. His work focuses on designing, validating, and optimizing e-probes to enhance diagnostic accuracy and expand MiFi®’s detection capabilities across diverse host species.
+        </p>
+        <p>
+          Marcos Ribeiro-Junior received his Ph.D. in Agronomy (Plant Protection) from São Paulo State University (UNESP) in 2022, with a collaborative research period at Oklahoma State University (OSU) under the supervision of Prof. Renate Krause-Sakate and Prof. Francisco M. Ochoa-Corona. During his doctoral studies, he conducted research on molecular plant virology and bioinformatics, focusing on pathogen detection using high-throughput sequencing (HTS). Prior to that, he obtained his M.S. in Agronomy from UNESP in 2018 and his B.Sc. in Agronomy from the University of Marília (UNIMAR) in 2016.
+        </p>
+      </section>
 
-    <!-- News Section -->
-    <section id="news">
-      <h2>News</h2>
-      <p>I’m happy to share that I’m starting a new position as Diagnostics Specialist @ MiFi® LLC.</p>
-      <p>
-    MiFi® is a SaaS platform for rapid pathogen detection through NGS data analysis. It utilizes pathogen-specific e-probes, designed using advanced algorithms and validation tools, to identify pathogens efficiently. Users upload NGS data, select target e-probes, and receive pathogen detection results within hours, along with a confidence interval. Visit 
-    <a href="https://app.mifi.tech" target="_blank">app.mifi.tech</a> 
-    to create an account and start using MiFi® today.
-  </p>
-    </section>
+      <!-- News Section -->
+      <section id="news">
+        <h2>News</h2>
+        <p>I’m happy to share that I’m starting a new position as Diagnostics Specialist @ MiFi® LLC.</p>
+        <p>
+          MiFi® is a SaaS platform for rapid pathogen detection through NGS data analysis. It utilizes pathogen-specific e-probes, designed using advanced algorithms and validation tools, to identify pathogens efficiently. Users upload NGS data, select target e-probes, and receive pathogen detection results within hours, along with a confidence interval. Visit 
+          <a href="https://app.mifi.tech" target="_blank">app.mifi.tech</a> 
+          to create an account and start using MiFi® today.
+        </p>
+      </section>
+
+      <!-- Publications Section -->
+      <section id="publications" class="publications">
+        <h2>
+          Publications 
+          <span class="publication-note">J=Journal Articles, B=Book Chapter, S=In Submission</span>
+        </h2>
+        <ol>
 
     <!-- Publications Section -->
     <section id="publications" class="publications">
