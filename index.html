@@ -3,75 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
+    <title>Marcos Ribeiro-Junior, Ph.D.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aptos&family=Aptos+Display&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Aptos', sans-serif;
             margin: 0;
             padding: 0;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+            line-height: 1.5;
         }
-        header {
-            background: #333;
-            color: white;
-            padding: 15px;
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ccc;
+            margin-top: 20px;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
+        .info {
+            text-align: left;
+            max-width: 800px;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
         }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+        .info h1 {
+            margin: 0;
+            font-size: 24px;
+            font-family: 'Aptos Display', sans-serif;
         }
-        nav a {
-            color: white;
+        .info p {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .links {
+            text-align: right;
+            font-size: 14px;
+        }
+        .links a {
             text-decoration: none;
+            color: #007acc;
+            margin: 0 5px;
         }
-        .container {
-            padding: 50px;
-        }
-        footer {
-            background: #333;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        .about {
+            max-width: 800px;
+            text-align: left;
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My GitHub Pages Site</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>This is a simple personal site hosted on GitHub Pages.</p>
-        </section>
-        
-        <section id="projects">
-            <h2>My Projects</h2>
-            <p>Details about projects can go here.</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: your.email@example.com</p>
-        </section>
+    <img src="profile.jpg" alt="Marcos Ribeiro-Junior" class="profile-pic">
+    <div class="info">
+        <div>
+            <h1>Marcos Ribeiro-Junior, <span style="font-size: 18px;">Ph.D.</span></h1>
+            <p>Diagnostics Specialist at MiFi® LLC</p>
+            <p>Email: <a href="mailto:marcos.ribeiro@okstate.edu">marcos.ribeiro@okstate.edu</a></p>
+        </div>
+        <div class="links">
+            <a href="https://orcid.org/0000-0002-5024-1801" target="_blank"><i class="fab fa-orcid"></i> ORCID</a> |
+            <a href="https://scholar.google.com.br/citations?user=p6OAgMgAAAAJ&hl" target="_blank"><i class="fab fa-google"></i> Google Scholar</a> |
+            <a href="https://www.linkedin.com/in/marcosrrjr" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+            <a href="https://github.com/marcosrrjr" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
     </div>
-    
-    <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-    </footer>
+    <div class="about">
+        <h2>About Me</h2>
+        <p>Marcos Ribeiro-Junior develops advanced bioinformatics and molecular diagnostics for rapid pathogen detection across diverse hosts. He leads the design and optimization of proprietary e-probes, the core technology behind MiFi® LLC, enhancing diagnostic accuracy through high-throughput sequencing (HTS) analysis.</p>
+        <p>Marcos Ribeiro-Junior received his Ph.D. in Agronomy (Plant Protection) from São Paulo State University (UNESP) in 2022, with a collaborative research period at Oklahoma State University (OSU) under the supervision of Prof. Renate Krause-Sakate and Prof. Francisco M. Ochoa-Corona. During his doctoral studies, he conducted research on molecular plant virology and bioinformatics, focusing on pathogen detection using high-throughput sequencing (HTS). Prior to that, he obtained his M.S. in Agronomy from UNESP in 2018 and his B.Sc. in Agronomy from the University of Marília (UNIMAR) in 2016.</p>
+    </div>
 </body>
 </html>
