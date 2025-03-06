@@ -30,52 +30,96 @@
       outline: none;
     }
 
-    /* Navigation Bar */
-    .navbar {
-      background: #007acc;
-      padding: 15px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+/* Navigation Bar */
+.navbar {
+  background: #007acc;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .navbar .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
 
-    .navbar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
+/* Standard navigation (desktop) */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
 
-    .navbar ul li {
-      margin: 0 15px;
-    }
+.nav-links li {
+  margin: 0 15px;
+}
 
-    .navbar ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
 
-    .navbar ul li a:hover {
-      color: #ffcc00;
-    }
+.nav-links li a:hover {
+  color: #ffcc00;
+}
 
-    /* Adjust body to prevent content from hiding under the fixed navbar */
-    body {
-      padding-top: 60px;
-    }
+/* Mobile Navigation */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #007acc;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Adjust body to prevent content from hiding under the fixed navbar */
+body {
+  padding-top: 60px;
+}
+
 
     a {
       color: #007acc;
@@ -238,7 +282,10 @@
       <!-- Navigation Bar -->
 <nav class="navbar">
   <div class="container">
-    <ul>
+    <a href="#" class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </a>
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#current-projects">Projects</a></li>
@@ -441,10 +488,19 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer role="contentinfo" style="text-align: center; padding: 20px 0; font-size: 14px; color: #777;">
-      &copy; 2025 Marcos Ribeiro-Junior. All rights reserved.
-    </footer>
-  </div>
+<!-- Footer -->
+<footer role="contentinfo" style="text-align: center; padding: 20px 0; font-size: 14px; color: #777;">
+  &copy; 2025 Marcos Ribeiro-Junior. All rights reserved.
+</footer>
+
+<!-- JavaScript for Mobile Menu Toggle -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".menu-toggle").addEventListener("click", function () {
+      document.querySelector(".nav-links").classList.toggle("active");
+    });
+  });
+</script>
+
 </body>
 </html>
