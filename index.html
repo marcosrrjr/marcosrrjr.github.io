@@ -20,6 +20,63 @@
       color: #333;
       line-height: 1.6;
     }
+        a {
+      color: #007acc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #005b99;
+      outline: none;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background: #007acc;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .navbar ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Adjust body to prevent content from hiding under the fixed navbar */
+    body {
+      padding-top: 60px;
+    }
+
     a {
       color: #007acc;
       text-decoration: none;
@@ -178,6 +235,20 @@
   <div class="container">
     <!-- Header with three columns -->
     <header role="banner">
+      <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="container">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#current-projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="mailto:marcos.ribeiro@okstate.edu">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
       <!-- Left: Personal Info -->
       <div class="header-left">
         <h1>Marcos Ribeiro-Junior, <span class="phd">Ph.D.</span></h1>
