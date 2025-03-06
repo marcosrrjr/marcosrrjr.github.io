@@ -92,13 +92,14 @@
 
   .nav-links {
     display: none;
-    flex-direction: column;
+    flex-direction: column; /* Ensure flex layout */
     background: #007acc;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
     text-align: center;
+    transition: all 0.3s ease-in-out;
   }
 
   .nav-links li {
@@ -111,7 +112,7 @@
   }
 
   .nav-links.active {
-    display: flex;
+    display: flex !important; /* Force it to show */
   }
 }
 
@@ -496,9 +497,14 @@ body {
 <!-- JavaScript for Mobile Menu Toggle -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".menu-toggle").addEventListener("click", function () {
-      document.querySelector(".nav-links").classList.toggle("active");
-    });
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    }
   });
 </script>
 
