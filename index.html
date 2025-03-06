@@ -74,7 +74,7 @@
   color: #ffcc00;
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation (Fix Missing Hamburger) */
 .menu-toggle {
   display: none;
   font-size: 24px;
@@ -87,8 +87,9 @@
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: block; /* Make sure it's visible */
   }
+}
 
   .nav-links {
     display: none;
@@ -280,11 +281,12 @@ body {
   <div class="container">
     <!-- Header with three columns -->
     <header role="banner">
-      <!-- Navigation Bar -->
+<!-- Navigation Bar -->
 <nav class="navbar">
   <div class="container">
+    <!-- Menu Toggle Button -->
     <a href="#" class="menu-toggle">
-      <i class="fas fa-bars"></i>
+      <i class="fas fa-bars"></i> <!-- Hamburger Icon -->
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
