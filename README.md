@@ -4,7 +4,7 @@ This repository hosts my personal website, including my academic CV, publication
 
 ## About  
 - **Name:** Marcos Ribeiro-Junior, Ph.D.  
-- **Position:** Diagnostics Specialist @ MiFi® LLC  
+- **Position:** Computational Biologist @ MiFi® LLC  
 - **Research:** Bioinformatics, molecular diagnostics, pathogen detection  
 - **Website:** [marcosrrjr.github.io](https://marcosrrjr.github.io)  
 
