@@ -3,10 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Marcos Ribeiro-Junior, PhD — Computational Biologist</title>
-  <meta name="description" content="Marcos Ribeiro-Junior — computational biologist and virologist specializing in sequencing-based diagnostics for plant, zoonotic, and human pathogens." />
+  <title>Marcos Ribeiro-Junior, Ph.D. — Forensic Microbiologist · Computational Biologist</title>
+  <meta name="description" content="Marcos Ribeiro-Junior — forensic microbiologist and computational biologist working on pathogen detection, portable genomics, and bioinformatics." />
   <link rel="canonical" href="https://marcosrrjr.github.io/" />
 
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231a6b7c'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='26' font-weight='700' fill='white'%3EMR%3C/text%3E%3C/svg%3E" />
+
+  <!-- Open Graph / social previews -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Marcos Ribeiro-Junior, Ph.D. — Forensic Microbiologist · Computational Biologist" />
+  <meta property="og:description" content="Sequencing-based diagnostics for plant, zoonotic, and human pathogens." />
+  <meta property="og:url" content="https://marcosrrjr.github.io/" />
+  <meta property="og:image" content="https://marcosrrjr.github.io/assets/images/profile_pic.jpeg" />
+  <meta property="og:image:alt" content="Portrait of Marcos Ribeiro-Junior" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Marcos Ribeiro-Junior, Ph.D. — Forensic Microbiologist · Computational Biologist" />
+  <meta name="twitter:description" content="Sequencing-based diagnostics for plant, zoonotic, and human pathogens." />
+  <meta name="twitter:image" content="https://marcosrrjr.github.io/assets/images/profile_pic.jpeg" />
 
   <style>
     /* ===== Reset ===== */
@@ -27,8 +41,7 @@
       --accent-lt: #eaf4f6;
       --radius:    6px;
       --max:       1080px;
-      --serif:     'Helvetica Neue', Helvetica, Arial, sans-serif;
-      --sans:      'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --font:      'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -45,7 +58,7 @@
 
     /* ===== Base ===== */
     body {
-      font-family: var(--sans);
+      font-family: var(--font);
       font-weight: 400;
       font-size: 16px;
       line-height: 1.7;
@@ -62,8 +75,9 @@
     .container { max-width: var(--max); margin-inline: auto; padding-inline: 32px; }
     @media (max-width: 640px) { .container { padding-inline: 20px; } }
 
-    section { padding-block: 64px; border-top: 1px solid var(--rule); }
+    section { padding-block: 64px; border-top: 1px solid var(--rule); scroll-margin-top: 64px; }
     section:first-of-type { border-top: none; }
+    @media (max-width: 780px) { section { scroll-margin-top: 100px; } }
 
     /* ===== Skip link ===== */
     .skip { position: absolute; left: -9999px; }
@@ -74,21 +88,15 @@
       position: sticky; top: 0; z-index: 50;
       background: rgba(255,255,255,.88);
       backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
       border-bottom: 1px solid var(--rule);
     }
     @media (prefers-color-scheme: dark) {
       .site-nav { background: rgba(13,15,19,.88); }
     }
     .nav-inner {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; align-items: center; justify-content: center;
       height: 60px;
-    }
-    .nav-brand {
-      font-family: var(--serif);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: -.01em;
-      color: var(--ink);
     }
     .nav-links { display: flex; gap: 6px; }
     .nav-links a {
@@ -97,13 +105,29 @@
       color: var(--ink-2);
       padding: 5px 10px;
       border-radius: var(--radius);
+      white-space: nowrap;
       transition: color .15s, background .15s;
     }
     .nav-links a:hover { color: var(--ink); background: var(--surface); opacity: 1; }
 
+    /* Mobile: links in a horizontally scrollable row */
     @media (max-width: 780px) {
-      .nav-links { display: none; }
-      .nav-inner { justify-content: center; }
+      .nav-inner {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding-top: 8px;
+        gap: 0;
+      }
+      .nav-links {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 8px;
+        margin-inline: -20px;
+        padding-inline: 14px;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
     }
 
     /* ===== Hero ===== */
@@ -115,7 +139,7 @@
       align-items: center;
     }
     @media (max-width: 700px) {
-      .hero { grid-template-columns: 1fr; padding-block: 64px 48px; }
+      .hero { grid-template-columns: 1fr; padding-block: 48px 40px; }
       .hero-avatar { order: -1; }
     }
     .hero-eyebrow {
@@ -127,7 +151,6 @@
       margin-bottom: 16px;
     }
     .hero-name {
-      font-family: var(--serif);
       font-size: clamp(32px, 4.5vw, 52px);
       font-weight: 700;
       line-height: 1.08;
@@ -169,14 +192,7 @@
       text-transform: uppercase;
       color: var(--ink-3);
       margin-bottom: 32px;
-    }
-    .sec-title {
-      font-family: var(--serif);
-      font-size: clamp(22px, 2.8vw, 30px);
-      font-weight: 700;
-      letter-spacing: -.015em;
-      color: var(--ink);
-      margin-bottom: 20px;
+      line-height: 1.7;
     }
 
     /* ===== Two-column ===== */
@@ -188,11 +204,11 @@
     @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; gap: 40px; } }
 
     /* ===== About prose ===== */
+    .about-text { max-width: 760px; }
     .about-text p { margin-bottom: 16px; font-size: 16px; line-height: 1.8; }
     .about-text p:last-child { margin-bottom: 0; }
 
     /* ===== Profile facts ===== */
-    .profile-col { }
     .fact-group { margin-bottom: 24px; }
     .fact-label {
       font-size: 11px;
@@ -213,9 +229,11 @@
       padding-block: 18px;
       border-bottom: 1px solid var(--rule);
     }
-    .appt-item:first-child { border-top: 1px solid var(--rule); }
+    .appt-item:first-of-type { border-top: 1px solid var(--rule); }
+    @media (max-width: 560px) { .appt-item { grid-template-columns: 1fr; gap: 4px; } }
     .appt-role { font-size: 15px; font-weight: 500; color: var(--ink); }
     .appt-org { font-size: 14px; color: var(--ink-2); margin-top: 3px; }
+    .appt-desc { font-size: 14px; color: var(--ink-3); margin-top: 6px; }
     .appt-date { font-size: 13px; color: var(--ink-3); white-space: nowrap; }
 
     /* ===== Project ===== */
@@ -225,6 +243,8 @@
       border-radius: 10px;
       padding: 32px;
     }
+    @media (max-width: 640px) { .project-card { padding: 24px 20px; } }
+    .project-list { display: grid; gap: 24px; }
     .project-tag {
       display: inline-block;
       font-size: 11px;
@@ -238,7 +258,6 @@
       margin-bottom: 16px;
     }
     .project-title {
-      font-family: var(--serif);
       font-size: 19px;
       font-weight: 700;
       letter-spacing: -.015em;
@@ -254,7 +273,7 @@
       padding-block: 20px;
       border-bottom: 1px solid var(--rule);
     }
-    .pub-item:first-child { border-top: 1px solid var(--rule); }
+    .pub-item:first-of-type { border-top: 1px solid var(--rule); }
     .pub-year {
       font-size: 12px;
       font-weight: 600;
@@ -271,7 +290,7 @@
     }
     .pub-authors { font-size: 13px; color: var(--ink-3); margin-bottom: 4px; }
     .pub-journal { font-size: 13px; color: var(--ink-2); font-style: italic; }
-    .pub-doi { font-size: 12px; color: var(--accent); margin-top: 6px; }
+    .pub-doi { font-size: 12px; color: var(--accent); margin-top: 6px; word-break: break-word; }
 
     .scholar-link {
       display: inline-flex; align-items: center; gap: 6px;
@@ -288,7 +307,7 @@
     /* ===== Skills ===== */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
       gap: 24px;
     }
     .skill-block {
@@ -307,39 +326,15 @@
     }
     .skill-items { font-size: 14px; color: var(--ink-2); line-height: 1.7; }
 
-    /* ===== Experience ===== */
-    .exp-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 32px;
-      padding-block: 28px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .exp-item:first-child { border-top: 1px solid var(--rule); }
-    @media (max-width: 720px) {
-      .exp-item { grid-template-columns: 1fr; gap: 10px; }
-    }
-    .exp-period { font-size: 13px; color: var(--ink-3); padding-top: 2px; }
-    .exp-role { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
-    .exp-org { font-size: 14px; color: var(--ink-2); margin-bottom: 10px; }
-    .exp-bullets { padding-left: 18px; }
-    .exp-bullets li {
-      font-size: 14px;
-      color: var(--ink-2);
-      margin-bottom: 5px;
-      list-style: disc;
-    }
-
     /* ===== Contact ===== */
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 40px;
     }
-    @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
-    .contact-item { }
+    @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; gap: 28px; } }
     .contact-label { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
-    .contact-value { font-size: 15px; color: var(--ink-2); line-height: 1.6; }
+    .contact-value { font-size: 15px; color: var(--ink-2); line-height: 1.6; word-break: break-word; }
     .contact-value a { color: var(--accent); }
 
     /* ===== Footer ===== */
@@ -358,18 +353,32 @@
     }
     .hero > * { animation: fade-up .6s ease both; }
     .hero > *:nth-child(2) { animation-delay: .1s; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero > * { animation: none; }
+    }
   </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Marcos Ribeiro-Junior",
-    "jobTitle": "Postdoctoral Researcher",
-    "affiliation": {"@type": "Organization", "name": "Oklahoma State University"},
-    "email": "mailto:marcos.ribeiro@okstate.edu",
+    "name": "Marcos Roberto Ribeiro-Junior",
+    "honorificSuffix": "Ph.D.",
+    "jobTitle": ["Postdoctoral Researcher", "Senior Scientist"],
+    "affiliation": [
+      {"@type": "Organization", "name": "Oklahoma State University — Department of Entomology and Plant Pathology"}
+    ],
+    "worksFor": [
+      {"@type": "Organization", "name": "MiFi, Inc."}
+    ],
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "São Paulo State University (UNESP)"},
+      {"@type": "CollegeOrUniversity", "name": "University of Marília (UNIMAR)"}
+    ],
+    "email": "mailto:marcos@mifi.tech",
     "url": "https://marcosrrjr.github.io/",
-    "image": "./assets/images/profile.jpeg",
+    "image": "https://marcosrrjr.github.io/assets/images/profile_pic.jpeg",
     "sameAs": [
       "https://orcid.org/0000-0002-5024-1801",
       "https://scholar.google.com/citations?user=p6OAgMgAAAAJ",
@@ -383,16 +392,14 @@
 <a class="skip" href="#content">Skip to main content</a>
 
 <!-- Nav -->
-<nav class="site-nav" role="navigation" aria-label="Primary">
+<nav class="site-nav" aria-label="Primary">
   <div class="container nav-inner">
-    <span class="nav-brand">Marcos Ribeiro-Junior</span>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#appointments">Appointments</a>
-      <a href="#project">Project</a>
+      <a href="#project">Projects</a>
       <a href="#publications">Publications</a>
       <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -401,14 +408,14 @@
 <main id="content" class="container" tabindex="-1">
 
   <!-- Hero -->
-  <div class="hero" aria-labelledby="hero-name">
+  <header class="hero">
     <div>
-      <p class="hero-eyebrow">Computational Biologist · Virologist</p>
-      <h1 id="hero-name" class="hero-name">Marcos Ribeiro-Junior,&nbsp;Ph.D.</h1>
-      <p class="hero-role">Sequencing-Based Diagnostics for Plant, Zoonotic &amp; Human Pathogens.</p>
+      <p class="hero-eyebrow">Forensic Microbiologist · Computational Biologist</p>
+      <h1 class="hero-name">Marcos Ribeiro-Junior,&nbsp;Ph.D.</h1>
+      <p class="hero-role">Sequencing-based diagnostics for plant, zoonotic, and human pathogens</p>
       <div class="hero-links">
-        <a class="hero-link" href="mailto:marcos.ribeiro@okstate.edu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        <a class="hero-link" href="mailto:marcos@mifi.tech">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
           Email
         </a>
         <a class="hero-link" href="https://orcid.org/0000-0002-5024-1801" target="_blank" rel="noopener">ORCID</a>
@@ -419,243 +426,141 @@
       </div>
     </div>
     <div class="hero-avatar" style="justify-self:center">
-      <img class="avatar" src="./assets/images/profile.jpeg" alt="Portrait of Marcos Ribeiro-Junior" loading="eager" width="148" height="148"
-           onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27148%27 height=%27148%27><defs><linearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27><stop stop-color=%27%231a6b7c%27 offset=%270%27/><stop stop-color=%27%230e4f5c%27 offset=%271%27/></linearGradient></defs><rect width=%27100%25%27 height=%27100%25%27 fill=%27url(%23g)%27 rx=%2774%27/><text x=%2750%25%27 y=%2754%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-size=%2752%27 fill=%27white%27 font-weight=%27600%27>MR</text></svg>'" />
+      <img class="avatar" src="./assets/images/profile_pic.jpeg" alt="Portrait of Marcos Ribeiro-Junior" loading="eager" width="148" height="148"
+           onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27148%27 height=%27148%27><defs><linearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27><stop stop-color=%27%231a6b7c%27 offset=%270%27/><stop stop-color=%27%230e4f5c%27 offset=%271%27/></linearGradient></defs><rect width=%27100%25%27 height=%27100%25%27 fill=%27url(%23g)%27 rx=%2774%27/><text x=%2750%25%27 y=%2754%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-family=%27Helvetica,Arial,sans-serif%27 font-size=%2752%27 fill=%27white%27 font-weight=%27700%27>MR</text></svg>'" />
     </div>
-  </div>
+  </header>
 
-  <!-- About + Profile -->
+  <!-- About -->
   <section id="about" aria-labelledby="about-title">
-    <p class="sec-label">About</p>
-    <div class="two-col">
-      <div class="about-text">
-        <p>Dr. Marcos Roberto Ribeiro-Junior is a computational biologist and virologist specializing in the development and validation of sequencing-based diagnostic platforms for the detection of plant, zoonotic, and human pathogens.</p>
-        <p>He holds a Ph.D. in Agronomy (Plant Protection) from São Paulo State University (UNESP), with a collaborative research period at Oklahoma State University (OSU), and has accumulated over a decade of experience in molecular diagnostics, high-throughput sequencing (Nanopore and Illumina), and bioinformatics pipeline development.</p>
-        <p>Currently, Dr. Ribeiro-Junior serves as Postdoctoral Researcher at the Institute for Biosecurity and Microbial Forensics (IBMF), Department of Entomology and Plant Pathology, Oklahoma State University. His work centers on pathogen detection, portable genomics, and bioinformatics.</p>
-      </div>
-
-      <div class="profile-col" aria-labelledby="profile-title">
-        <div class="fact-group">
-          <p class="fact-label">Alma mater</p>
-          <p class="fact-value">São Paulo State University (UNESP)<br>University of Marília (UNIMAR)</p>
-        </div>
-        <div class="fact-group">
-          <p class="fact-label">Known for</p>
-          <p class="fact-value">EDNA-MiFi® e-probe diagnostics for plant, zoonotic, and human pathogens; global soybean virus screening; tick-borne pathogen surveillance</p>
-        </div>
-        <div class="fact-group">
-          <p class="fact-label">Fields</p>
-          <p class="fact-value">Plant pathology · Molecular diagnostics · Microbial forensics · Bioinformatics · Genomics · Phylogenetics</p>
-        </div>
-        <div class="fact-group">
-          <p class="fact-label">Institution</p>
-          <p class="fact-value">Oklahoma State University (OSU) — Institute for Biosecurity and Microbial Forensics (IBMF), Department of Entomology and Plant Pathology</p>
-        </div>
-        <div class="fact-group">
-          <p class="fact-label">Publications</p>
-          <p class="fact-value">30 peer-reviewed articles · 4 book chapters · 39 conference presentations</p>
-        </div>
-      </div>
+    <h2 id="about-title" class="sec-label">About</h2>
+    <div class="about-text">
+      <p>I am a forensic microbiologist and computational biologist working on pathogen detection, portable genomics, and bioinformatics.</p>
+      <p>I hold a Ph.D. in Plant Protection from São Paulo State University (UNESP) and have over a decade of experience in molecular biology, next-generation sequencing, and bioinformatics.</p>
+      <p>I am currently a Postdoctoral Researcher in the Department of Entomology and Plant Pathology at Oklahoma State University (OSU) and a Senior Scientist at MiFi, Inc., where I develop computational tools for metagenomic pathogen detection.</p>
     </div>
   </section>
 
   <!-- Current Appointments -->
   <section id="appointments" aria-labelledby="appt-title">
-    <p class="sec-label">Current Appointments</p>
+    <h2 id="appt-title" class="sec-label">Current Appointments</h2>
+    <div class="appt-item">
+      <div>
+        <p class="appt-role">Senior Scientist</p>
+        <p class="appt-org"><a href="https://mifi.tech" target="_blank" rel="noopener">MiFi, Inc.</a></p>
+        <p class="appt-desc">An Oklahoma State University spinout focused on the development and commercialization of the MiFi® e-probe platform for sequence-based pathogen detection.</p>
+      </div>
+      <span class="appt-date">Jan 2025 – Present</span>
+    </div>
     <div class="appt-item">
       <div>
         <p class="appt-role">Postdoctoral Researcher</p>
-        <p class="appt-org">Institute for Biosecurity and Microbial Forensics (IBMF), Dept. of Entomology &amp; Plant Pathology, Oklahoma State University</p>
+        <p class="appt-org"><a href="https://agriculture.okstate.edu/departments-programs/entomol-plant-path" target="_blank" rel="noopener">Dept. of Entomology &amp; Plant Pathology</a>, Oklahoma State University</p>
       </div>
       <span class="appt-date">Oct 2024 – Present</span>
     </div>
   </section>
 
-  <!-- Current Project -->
+  <!-- Current Projects -->
   <section id="project" aria-labelledby="proj-title">
-    <p class="sec-label">Current Project</p>
-    <div class="project-card">
-      <span class="project-tag">OCAST · AR26-0034</span>
-      <h2 class="project-title">Microbe Finder (MiFi®) for Early Detection and Diagnosis of Tick-Borne Pathogens</h2>
-      <p class="project-meta">Oklahoma Center for the Advancement of Science and Technology (OCAST), OSTraD Program &nbsp;·&nbsp; Role: Co-Principal Investigator</p>
-      <p class="project-body">This project develops and validates MiFi®-based genomic diagnostics for the early detection of tick-borne pathogens in tick, human, and animal samples. Leveraging EDNA-MiFi® e-probe technology and Oxford Nanopore sequencing, the project targets a curated panel of more than 68 clinically and epidemiologically relevant pathogens — including bacteria, viruses, and protozoa. The workflow integrates field sample collection, nucleic acid extraction, library preparation, and bioinformatics analysis within a standardized surveillance framework applicable to public health and veterinary diagnostic settings.</p>
+    <h2 id="proj-title" class="sec-label">Current Projects</h2>
+    <div class="project-list">
+    <article class="project-card">
+      <span class="project-tag">USDA-NIFA SBIR – Swine Health</span>
+      <h3 class="project-title">Protecting Swine Health and Trade: MiFi® Multiplex Software Platform for Rapid Detection of High-Impact Pathogens</h3>
+      <p class="project-meta">USDA, National Institute of Food and Agriculture (NIFA), Small Business Innovation Research (SBIR) Program, Phase II &nbsp;·&nbsp; Role: Co-Project Director</p>
+      <p class="project-body">Developing and validating a MiFi®-based multiplex diagnostic platform combining Oxford Nanopore sequencing and e-probe technology for rapid detection of high-impact swine pathogens, supporting disease surveillance and veterinary diagnostics.</p>
+    </article>
+    <article class="project-card">
+      <span class="project-tag">OCAST – Tick-Borne Pathogen Detection</span>
+      <h3 class="project-title">Microbe Finder (MiFi®) for Early Detection and Diagnosis of Tick-Borne Pathogens</h3>
+      <p class="project-meta">Oklahoma Center for the Advancement of Science and Technology (OCAST), OSTraD Program, AR26-0034 &nbsp;·&nbsp; Role: Co-Principal Investigator</p>
+      <p class="project-body">Developing and validating MiFi®-based genomic diagnostics for the detection of tick-borne pathogens in ticks, humans, and animals, integrating Oxford Nanopore sequencing and e-probe technology to support public health and veterinary surveillance.</p>
+    </article>
     </div>
   </section>
 
   <!-- Publications -->
   <section id="publications" aria-labelledby="pubs-title">
-    <p class="sec-label">Selected Publications</p>
-    <p style="font-size:15px;color:var(--ink-2);margin-bottom:32px;">First-author and representative co-authored works. For a complete list see <a href="https://scholar.google.com/citations?user=p6OAgMgAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <h2 id="pubs-title" class="sec-label">Selected Publications</h2>
+    <p style="font-size:15px;color:var(--ink-2);margin-bottom:32px;">For a complete list, see <a href="https://scholar.google.com/citations?user=p6OAgMgAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
 
-    <div class="pub-item">
+    <article class="pub-item">
       <p class="pub-year">2026</p>
-      <p class="pub-title">Rapid detection of human and animal respiratory viruses using Microbe Finder (MiFi®)</p>
+      <h3 class="pub-title">Rapid detection of human and animal respiratory viruses using Microbe Finder (MiFi®)</h3>
       <p class="pub-authors"><strong>Ribeiro-Junior MR</strong>, Cardwell KF, Nascimento D, Espindola AS, Ramachandran A, Gupta S, Tyungu D</p>
       <p class="pub-journal">Frontiers in Microbiology</p>
       <p class="pub-doi"><a href="https://doi.org/10.3389/fmicb.2026.1743643" target="_blank" rel="noopener">DOI: 10.3389/fmicb.2026.1743643</a></p>
-    </div>
+    </article>
 
-    <div class="pub-item">
+    <article class="pub-item">
       <p class="pub-year">2025</p>
-      <p class="pub-title">An attempt toward the global screening of soybean viruses using EDNA-MiFi®-based electronic probes</p>
+      <h3 class="pub-title">An attempt toward the global screening of soybean viruses using EDNA-MiFi®-based electronic probes</h3>
       <p class="pub-authors"><strong>Ribeiro-Junior MR</strong>, Espindola A, Nascimento DM, Silva FB, Krause-Sakate R, Ochoa-Corona FM</p>
       <p class="pub-journal">PhytoFrontiers™</p>
       <p class="pub-doi"><a href="https://doi.org/10.1094/PHYTOFR-12-24-0141-FI" target="_blank" rel="noopener">DOI: 10.1094/PHYTOFR-12-24-0141-FI</a></p>
-    </div>
+    </article>
 
-    <div class="pub-item">
+    <article class="pub-item">
       <p class="pub-year">2025</p>
-      <p class="pub-title">Development and validation of a suite of e-probes for EDNA to detect 20 graft-transmissible pathogens of citrus using MiFi® and blind ring testing among novice users</p>
+      <h3 class="pub-title">Development and validation of a suite of e-probes for EDNA to detect 20 graft-transmissible pathogens of citrus using MiFi® and blind ring testing among novice users</h3>
       <p class="pub-authors">Nascimento DM, Bodaghi S, Wang H, <strong>Ribeiro-Junior MR</strong>, et al.</p>
       <p class="pub-journal">PhytoFrontiers™</p>
       <p class="pub-doi"><a href="https://doi.org/10.1094/PHYTOFR-12-24-0140-FI" target="_blank" rel="noopener">DOI: 10.1094/PHYTOFR-12-24-0140-FI</a></p>
-    </div>
+    </article>
 
-    <div class="pub-item">
+    <article class="pub-item">
       <p class="pub-year">2024</p>
-      <p class="pub-title">Molecular identification of thrips species in Brazilian agroecosystems</p>
+      <h3 class="pub-title">Molecular identification of thrips species in Brazilian agroecosystems</h3>
       <p class="pub-authors"><strong>Ribeiro-Junior MR</strong>, Silva FB, Marubayashi JM, Nogueira AM, Muller C, Lima EFB, Nascimento DM, Ochoa-Corona FM, Krause-Sakate R</p>
       <p class="pub-journal">Phytoparasitica</p>
       <p class="pub-doi"><a href="https://doi.org/10.1007/s12600-024-01198-8" target="_blank" rel="noopener">DOI: 10.1007/s12600-024-01198-8</a></p>
-    </div>
+    </article>
 
-    <div class="pub-item">
+    <article class="pub-item">
       <p class="pub-year">2022</p>
-      <p class="pub-title">Molecular and biological characterization of an isolate of the potyvirus <em>Passiflora virus Y</em> naturally infecting soybean (<em>Glycine max</em>) in Brazil</p>
+      <h3 class="pub-title">Molecular and biological characterization of an isolate of the potyvirus <em>Passiflora virus Y</em> naturally infecting soybean (<em>Glycine max</em>) in Brazil</h3>
       <p class="pub-authors"><strong>Ribeiro-Junior MR</strong>, Silva FB, Marubayashi JM, Uzan J, Nogueira AM, Muller C, Nascimento DM, Yuki VA, Narita N, Pavan MA, Ochoa-Corona FM, Krause-Sakate R</p>
       <p class="pub-journal">Archives of Virology</p>
       <p class="pub-doi"><a href="https://doi.org/10.1007/s00705-022-05605-5" target="_blank" rel="noopener">DOI: 10.1007/s00705-022-05605-5</a></p>
-    </div>
+    </article>
 
     <a class="scholar-link" href="https://scholar.google.com/citations?user=p6OAgMgAAAAJ" target="_blank" rel="noopener">
-      View all 30 publications on Google Scholar →
+      View the full publication list on Google Scholar →
     </a>
   </section>
 
-  <!-- Skills -->
+  <!-- Technical Skills -->
   <section id="skills" aria-labelledby="skills-title">
-    <p class="sec-label">Skills &amp; Technologies</p>
+    <h2 id="skills-title" class="sec-label">Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-block">
-        <p class="skill-category">Sequencing Platforms</p>
-        <p class="skill-items">Oxford Nanopore Technologies (ONT) · Illumina</p>
+        <h3 class="skill-category">Molecular Biology &amp; Diagnostics</h3>
+        <p class="skill-items">DNA/RNA extraction, PCR, RT-PCR, qPCR, RPA, primer and probe design, Sanger sequencing, and NGS library preparation.</p>
       </div>
       <div class="skill-block">
-        <p class="skill-category">Molecular Biology</p>
-        <p class="skill-items">DNA/RNA extraction · PCR, RT-PCR, RPA · Primer design · NGS library preparation · Sanger sequencing</p>
+        <h3 class="skill-category">Genomics &amp; Bioinformatics</h3>
+        <p class="skill-items">Illumina and Oxford Nanopore sequencing, metagenomic pathogen detection, genome assembly and annotation, comparative genomics, phylogenetics, and e-probe development and validation.</p>
       </div>
       <div class="skill-block">
-        <p class="skill-category">Bioinformatics</p>
-        <p class="skill-items">BLAST · MAFFT · MEGA · Minimap2 · Bowtie · Geneious · CLC Genomics Workbench</p>
+        <h3 class="skill-category">Computational Biology</h3>
+        <p class="skill-items">Linux, Bash, Python, R, Git/GitHub, SLURM-based high-performance computing (HPC), and AWS cloud computing.</p>
       </div>
       <div class="skill-block">
-        <p class="skill-category">Diagnostics Platform</p>
-        <p class="skill-items">EDNA-MiFi® · E-probe design &amp; curation · In silico validation · SPAdes / metaSPAdes · Diamond · Kraken2 · Bracken</p>
+        <h3 class="skill-category">Bioinformatics Tools</h3>
+        <p class="skill-items">BLAST, MAFFT, ClustalW, MEGA, Minimap2, Bowtie2, Kraken2, QIAGEN CLC Genomics Workbench, and Geneious.</p>
       </div>
       <div class="skill-block">
-        <p class="skill-category">Programming &amp; HPC</p>
-        <p class="skill-items">Bash · Python · R / ggplot2 · Linux · SLURM · AWS · Git / GitHub</p>
-      </div>
-      <div class="skill-block">
-        <p class="skill-category">Phylogenetics</p>
-        <p class="skill-items">Bayesian inference · Maximum Likelihood · Phylogenetic network analysis</p>
+        <h3 class="skill-category">Plant Pathology &amp; Field Diagnostics</h3>
+        <p class="skill-items">Plant disease diagnosis, field sampling, experimental design, pathogen identification, and disease assessment.</p>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" aria-labelledby="exp-title">
-    <p class="sec-label">Experience</p>
-
-    <div class="exp-item">
-      <p class="exp-period">Oct 2023 – Sep 2024</p>
-      <div>
-        <p class="exp-role">Postdoctoral Fellow, Dept. of Plant Protection</p>
-        <p class="exp-org">São Paulo State University (UNESP) · Botucatu, SP, Brazil</p>
-        <ul class="exp-bullets">
-          <li>Molecular characterization of orthotospoviruses infecting soybean and thrips insects.</li>
-          <li>DNA/RNA extraction and library preparation for Illumina sequencing.</li>
-          <li>Mentored undergraduate and graduate students in molecular diagnostics.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <p class="exp-period">May – Jul 2023</p>
-      <div>
-        <p class="exp-role">Consultant, PFI MiFi for Citrus Project</p>
-        <p class="exp-org">University of California Riverside (UCR) &amp; Oklahoma State University (OSU) · Remote</p>
-        <ul class="exp-bullets">
-          <li>Designed and validated e-probes for pathogen detection in citrus.</li>
-          <li>Conducted beta testing and data analysis using MiFi® diagnostic systems.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <p class="exp-period">Jul – Dec 2022</p>
-      <div>
-        <p class="exp-role">Postdoctoral Researcher, IBMF</p>
-        <p class="exp-org">Oklahoma State University (OSU) · Stillwater, OK, USA</p>
-        <ul class="exp-bullets">
-          <li>Developed e-probes for pathogen detection in citrus using high-throughput sequencing.</li>
-          <li>Conducted HTS data analysis for virus, viroid, and bacteria identification.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <p class="exp-period">Jan – Dec 2021</p>
-      <div>
-        <p class="exp-role">Ph.D. Internship, IBMF</p>
-        <p class="exp-org">Oklahoma State University (OSU) · Stillwater, OK, USA</p>
-        <ul class="exp-bullets">
-          <li>Conducted Nanopore NGS library preparation and sequencing.</li>
-          <li>Created and curated e-probes to detect global soybean viruses.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <p class="exp-period">Mar 2018 – Jun 2022</p>
-      <div>
-        <p class="exp-role">Graduate Research Assistant (Ph.D.) &amp; Temporary Lecturer</p>
-        <p class="exp-org">São Paulo State University (UNESP) · Botucatu, SP, Brazil</p>
-        <ul class="exp-bullets">
-          <li>Molecular identification of thrips and whitefly species using PCR and Sanger sequencing.</li>
-          <li>Developed molecular markers for thrips detection; surveyed plant viruses in soybean fields.</li>
-          <li>Delivered lectures on crop disease management and supervised student projects.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <p class="exp-period">Mar 2016 – Feb 2018</p>
-      <div>
-        <p class="exp-role">Graduate Research Assistant (M.S.)</p>
-        <p class="exp-org">São Paulo State University (UNESP) · Botucatu, SP, Brazil</p>
-        <ul class="exp-bullets">
-          <li>Biological, serological, and molecular identification of plant viruses.</li>
-          <li>Established virus detection methods in lettuce and chard.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Additional -->
-  <section id="additional" aria-labelledby="add-title">
-    <p class="sec-label">Additional Information</p>
+  <!-- Education & Languages -->
+  <section id="education" aria-labelledby="edu-title">
+    <h2 id="edu-title" class="sec-label">Education &amp; Languages</h2>
     <div class="two-col">
-      <div>
-        <div class="fact-group">
-          <p class="fact-label">Languages</p>
-          <p class="fact-value">Portuguese (Native) · English (Fluent) · Spanish (Intermediate)</p>
-        </div>
-        <div class="fact-group">
-          <p class="fact-label">Interests</p>
-          <p class="fact-value">Virology · Molecular diagnostics · High-throughput sequencing · Genomics · Bioinformatics · Portable diagnostics</p>
-        </div>
-      </div>
       <div>
         <div class="fact-group">
           <p class="fact-label">Education</p>
@@ -666,23 +571,22 @@
           </p>
         </div>
       </div>
+      <div>
+        <div class="fact-group">
+          <p class="fact-label">Languages</p>
+          <p class="fact-value">Portuguese (Native) · English (Fluent) · Spanish (Intermediate)</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" aria-labelledby="contact-title">
-    <p class="sec-label">Contact</p>
+    <h2 id="contact-title" class="sec-label">Contact</h2>
     <div class="contact-grid">
       <div class="contact-item">
-        <p class="contact-label">Address</p>
-        <p class="contact-value">127 Noble Research Center<br>Oklahoma State University<br>Stillwater, OK 74078, USA</p>
-      </div>
-      <div class="contact-item">
         <p class="contact-label">Email</p>
-        <p class="contact-value"><a href="mailto:marcos.ribeiro@okstate.edu">marcos.ribeiro@okstate.edu</a></p>
-        <br>
-        <p class="contact-label">Phone</p>
-        <p class="contact-value"><a href="tel:+14052696928">+1 (405) 269-6928</a></p>
+        <p class="contact-value"><a href="mailto:marcos@mifi.tech">marcos@mifi.tech</a></p>
       </div>
       <div class="contact-item">
         <p class="contact-label">Schedule a meeting</p>
@@ -693,7 +597,7 @@
 
 </main>
 
-<footer role="contentinfo">
+<footer>
   <p>© <span id="yr"></span> Marcos Roberto Ribeiro-Junior · All rights reserved.</p>
 </footer>
 
